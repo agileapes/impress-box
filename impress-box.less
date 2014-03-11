@@ -1,18 +1,12 @@
 /** Essentials **/
 
-@default: #eeeeee;
-
-.impress-box > * {
-  display: none;
-}
-
 .impress-box *, .impress-box:hover *, .impress-box, .impress-box:hover {
   text-decoration: none;
 }
 
 /** ImpressBox **/
 
-.transition ( @property, @duration, @style: ease-in-out ) {
+.transition (@property, @duration, @style: ease-in-out) {
   -webkit-transition-property: @property;
   -webkit-transition-duration: @duration;
   -webkit-transition-timing-function: @style;
@@ -35,20 +29,22 @@
 }
 
 .box-definition(@color) {
-  background: @color;
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  padding: 5px;
-  text-align: center;
-  .transition("backgroud", 0.4s);
-  border: 1px solid darken(@color, 10%);
-  text-decoration: none;
-  margin: 2px;
+  & {
+    background: @color;
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+    text-align: center;
+    .transition("backgroud", 0.4s);
+    border: 1px solid darken(@color, 10%);
+    text-decoration: none;
+    margin: 2px;
+  }
   &:hover {
     background: darken(@color, 5%);
   }
-  .link {
+  .caption {
     display: block;
     opacity: 0.1;
     width: 148px;
@@ -66,7 +62,7 @@
     background: darken(@color, 10%);
     color: saturate(darken(@color, 40%), 20%);
   }
-  &:hover .link {
+  &:hover .caption {
     color: #ffffff;
   }
   &.rounded {
@@ -109,20 +105,20 @@
   &.wide {
     width: 200px;
   }
-  &.wide .link {
+  &.wide .caption {
     width: 198px;
   }
   &:hover .landmark {
     opacity: 0.1;
   }
-  &:hover .link {
+  &:hover .caption {
     opacity: 1;
     color: #ffffff;
   }
 }
 
 .impress-box {
-  .box-definition(@default)
+  .box-definition(#eeeeee)
 }
 
 /** Contextual Variations **/
