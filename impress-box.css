@@ -1,11 +1,19 @@
-/** Essentials **/
-.impress-box *,
-.impress-box:hover *,
-.impress-box,
-.impress-box:hover {
-  text-decoration: none;
+/** ImpressBox v1.0 **/
+/** Copyright AgileApes, Ltd. 2014 (c) **/
+/**
+  Transition helper mixin
+**/
+/**
+  The main mixin defining an ImpressBox
+*/
+/** The default appearance **/
+.impress-box {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
-/** ImpressBox **/
 .impress-box {
   background: #eeeeee;
   display: inline-block;
@@ -32,8 +40,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box:hover {
-  background: #e1e1e1;
+.impress-box *,
+.impress-box:hover * {
+  text-decoration: none;
 }
 .impress-box .caption {
   display: block;
@@ -70,11 +79,16 @@
 .impress-box:hover .caption {
   color: #ffffff;
 }
-.impress-box.rounded {
-  border-radius: 8px;
+.impress-box:hover {
+  background: #e1e1e1;
+  text-decoration: none;
 }
-.impress-box.tall {
-  height: 200px;
+.impress-box:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box .landmark {
   display: block;
@@ -98,6 +112,12 @@
   color: #d5d5d5;
   text-shadow: 0 1px 0 #a2a2a2;
 }
+.impress-box.rounded {
+  border-radius: 8px;
+}
+.impress-box.tall {
+  height: 200px;
+}
 .impress-box.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -114,14 +134,14 @@
 .impress-box.wide .caption {
   width: 198px;
 }
-.impress-box:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box:hover .caption {
-  opacity: 1;
-  color: #ffffff;
-}
 /** Contextual Variations **/
+.impress-box.info {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
 .impress-box.info {
   background: #d9edf7;
   display: inline-block;
@@ -148,8 +168,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.info:hover {
-  background: #c4e3f3;
+.impress-box.info *,
+.impress-box.info:hover * {
+  text-decoration: none;
 }
 .impress-box.info .caption {
   display: block;
@@ -186,11 +207,16 @@
 .impress-box.info:hover .caption {
   color: #ffffff;
 }
-.impress-box.info.rounded {
-  border-radius: 8px;
+.impress-box.info:hover {
+  background: #c4e3f3;
+  text-decoration: none;
 }
-.impress-box.info.tall {
-  height: 200px;
+.impress-box.info:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.info:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.info .landmark {
   display: block;
@@ -214,6 +240,12 @@
   color: #afd9ee;
   text-shadow: 0 1px 0 #5bb1dc;
 }
+.impress-box.info.rounded {
+  border-radius: 8px;
+}
+.impress-box.info.tall {
+  height: 200px;
+}
 .impress-box.info.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -230,12 +262,12 @@
 .impress-box.info.wide .caption {
   width: 198px;
 }
-.impress-box.info:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.info:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.danger {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.danger {
   background: #f2dede;
@@ -263,8 +295,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.danger:hover {
-  background: #ebcccc;
+.impress-box.danger *,
+.impress-box.danger:hover * {
+  text-decoration: none;
 }
 .impress-box.danger .caption {
   display: block;
@@ -301,11 +334,16 @@
 .impress-box.danger:hover .caption {
   color: #ffffff;
 }
-.impress-box.danger.rounded {
-  border-radius: 8px;
+.impress-box.danger:hover {
+  background: #ebcccc;
+  text-decoration: none;
 }
-.impress-box.danger.tall {
-  height: 200px;
+.impress-box.danger:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.danger:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.danger .landmark {
   display: block;
@@ -329,6 +367,12 @@
   color: #e4b9b9;
   text-shadow: 0 1px 0 #c77070;
 }
+.impress-box.danger.rounded {
+  border-radius: 8px;
+}
+.impress-box.danger.tall {
+  height: 200px;
+}
 .impress-box.danger.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -345,12 +389,12 @@
 .impress-box.danger.wide .caption {
   width: 198px;
 }
-.impress-box.danger:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.danger:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.warning {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.warning {
   background: #fcf8e3;
@@ -378,8 +422,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.warning:hover {
-  background: #faf2cc;
+.impress-box.warning *,
+.impress-box.warning:hover * {
+  text-decoration: none;
 }
 .impress-box.warning .caption {
   display: block;
@@ -416,11 +461,16 @@
 .impress-box.warning:hover .caption {
   color: #ffffff;
 }
-.impress-box.warning.rounded {
-  border-radius: 8px;
+.impress-box.warning:hover {
+  background: #faf2cc;
+  text-decoration: none;
 }
-.impress-box.warning.tall {
-  height: 200px;
+.impress-box.warning:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.warning:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.warning .landmark {
   display: block;
@@ -444,6 +494,12 @@
   color: #f7ecb5;
   text-shadow: 0 1px 0 #edd559;
 }
+.impress-box.warning.rounded {
+  border-radius: 8px;
+}
+.impress-box.warning.tall {
+  height: 200px;
+}
 .impress-box.warning.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -460,12 +516,12 @@
 .impress-box.warning.wide .caption {
   width: 198px;
 }
-.impress-box.warning:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.warning:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.success {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.success {
   background: #dff0d8;
@@ -493,8 +549,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.success:hover {
-  background: #d0e9c6;
+.impress-box.success *,
+.impress-box.success:hover * {
+  text-decoration: none;
 }
 .impress-box.success .caption {
   display: block;
@@ -531,11 +588,16 @@
 .impress-box.success:hover .caption {
   color: #ffffff;
 }
-.impress-box.success.rounded {
-  border-radius: 8px;
+.impress-box.success:hover {
+  background: #d0e9c6;
+  text-decoration: none;
 }
-.impress-box.success.tall {
-  height: 200px;
+.impress-box.success:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.success:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.success .landmark {
   display: block;
@@ -559,6 +621,12 @@
   color: #c1e2b3;
   text-shadow: 0 1px 0 #84c569;
 }
+.impress-box.success.rounded {
+  border-radius: 8px;
+}
+.impress-box.success.tall {
+  height: 200px;
+}
 .impress-box.success.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -575,12 +643,13 @@
 .impress-box.success.wide .caption {
   width: 198px;
 }
-.impress-box.success:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.success:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+/** Color Variations **/
+.impress-box.muddy.green {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.muddy.green {
   background: #a1cf64;
@@ -608,8 +677,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.muddy.green:hover {
-  background: #95c951;
+.impress-box.muddy.green *,
+.impress-box.muddy.green:hover * {
+  text-decoration: none;
 }
 .impress-box.muddy.green .caption {
   display: block;
@@ -646,11 +716,16 @@
 .impress-box.muddy.green:hover .caption {
   color: #ffffff;
 }
-.impress-box.muddy.green.rounded {
-  border-radius: 8px;
+.impress-box.muddy.green:hover {
+  background: #95c951;
+  text-decoration: none;
 }
-.impress-box.muddy.green.tall {
-  height: 200px;
+.impress-box.muddy.green:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.muddy.green:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.muddy.green .landmark {
   display: block;
@@ -674,6 +749,12 @@
   color: #89c33d;
   text-shadow: 0 1px 0 #537624;
 }
+.impress-box.muddy.green.rounded {
+  border-radius: 8px;
+}
+.impress-box.muddy.green.tall {
+  height: 200px;
+}
 .impress-box.muddy.green.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -690,12 +771,12 @@
 .impress-box.muddy.green.wide .caption {
   width: 198px;
 }
-.impress-box.muddy.green:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.muddy.green:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.green {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.green {
   background: #60b044;
@@ -723,8 +804,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.green:hover {
-  background: #569e3d;
+.impress-box.green *,
+.impress-box.green:hover * {
+  text-decoration: none;
 }
 .impress-box.green .caption {
   display: block;
@@ -761,11 +843,16 @@
 .impress-box.green:hover .caption {
   color: #ffffff;
 }
-.impress-box.green.rounded {
-  border-radius: 8px;
+.impress-box.green:hover {
+  background: #569e3d;
+  text-decoration: none;
 }
-.impress-box.green.tall {
-  height: 200px;
+.impress-box.green:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.green:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.green .landmark {
   display: block;
@@ -789,6 +876,12 @@
   color: #4c8b36;
   text-shadow: 0 1px 0 #244219;
 }
+.impress-box.green.rounded {
+  border-radius: 8px;
+}
+.impress-box.green.tall {
+  height: 200px;
+}
 .impress-box.green.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -805,12 +898,12 @@
 .impress-box.green.wide .caption {
   width: 198px;
 }
-.impress-box.green:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.green:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.lime {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.lime {
   background: #6cff8f;
@@ -838,8 +931,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.lime:hover {
-  background: #53ff7c;
+.impress-box.lime *,
+.impress-box.lime:hover * {
+  text-decoration: none;
 }
 .impress-box.lime .caption {
   display: block;
@@ -876,11 +970,16 @@
 .impress-box.lime:hover .caption {
   color: #ffffff;
 }
-.impress-box.lime.rounded {
-  border-radius: 8px;
+.impress-box.lime:hover {
+  background: #53ff7c;
+  text-decoration: none;
 }
-.impress-box.lime.tall {
-  height: 200px;
+.impress-box.lime:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.lime:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.lime .landmark {
   display: block;
@@ -904,6 +1003,12 @@
   color: #39ff68;
   text-shadow: 0 1px 0 #00d232;
 }
+.impress-box.lime.rounded {
+  border-radius: 8px;
+}
+.impress-box.lime.tall {
+  height: 200px;
+}
 .impress-box.lime.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -920,12 +1025,12 @@
 .impress-box.lime.wide .caption {
   width: 198px;
 }
-.impress-box.lime:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.lime:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.orange {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.orange {
   background: #ffa500;
@@ -953,8 +1058,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.orange:hover {
-  background: #e69500;
+.impress-box.orange *,
+.impress-box.orange:hover * {
+  text-decoration: none;
 }
 .impress-box.orange .caption {
   display: block;
@@ -991,11 +1097,16 @@
 .impress-box.orange:hover .caption {
   color: #ffffff;
 }
-.impress-box.orange.rounded {
-  border-radius: 8px;
+.impress-box.orange:hover {
+  background: #e69500;
+  text-decoration: none;
 }
-.impress-box.orange.tall {
-  height: 200px;
+.impress-box.orange:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.orange:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.orange .landmark {
   display: block;
@@ -1019,6 +1130,12 @@
   color: #cc8400;
   text-shadow: 0 1px 0 #664200;
 }
+.impress-box.orange.rounded {
+  border-radius: 8px;
+}
+.impress-box.orange.tall {
+  height: 200px;
+}
 .impress-box.orange.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -1035,12 +1152,12 @@
 .impress-box.orange.wide .caption {
   width: 198px;
 }
-.impress-box.orange:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.orange:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.violet {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.violet {
   background: #ee82ee;
@@ -1068,8 +1185,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.violet:hover {
-  background: #eb6ceb;
+.impress-box.violet *,
+.impress-box.violet:hover * {
+  text-decoration: none;
 }
 .impress-box.violet .caption {
   display: block;
@@ -1106,11 +1224,16 @@
 .impress-box.violet:hover .caption {
   color: #ffffff;
 }
-.impress-box.violet.rounded {
-  border-radius: 8px;
+.impress-box.violet:hover {
+  background: #eb6ceb;
+  text-decoration: none;
 }
-.impress-box.violet.tall {
-  height: 200px;
+.impress-box.violet:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.violet:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.violet .landmark {
   display: block;
@@ -1134,6 +1257,12 @@
   color: #e855e8;
   text-shadow: 0 1px 0 #bd1abd;
 }
+.impress-box.violet.rounded {
+  border-radius: 8px;
+}
+.impress-box.violet.tall {
+  height: 200px;
+}
 .impress-box.violet.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -1150,12 +1279,12 @@
 .impress-box.violet.wide .caption {
   width: 198px;
 }
-.impress-box.violet:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.violet:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.pink {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.pink {
   background: #ffc0cb;
@@ -1183,8 +1312,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.pink:hover {
-  background: #ffa6b6;
+.impress-box.pink *,
+.impress-box.pink:hover * {
+  text-decoration: none;
 }
 .impress-box.pink .caption {
   display: block;
@@ -1221,11 +1351,16 @@
 .impress-box.pink:hover .caption {
   color: #ffffff;
 }
-.impress-box.pink.rounded {
-  border-radius: 8px;
+.impress-box.pink:hover {
+  background: #ffa6b6;
+  text-decoration: none;
 }
-.impress-box.pink.tall {
-  height: 200px;
+.impress-box.pink:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.pink:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.pink .landmark {
   display: block;
@@ -1249,6 +1384,12 @@
   color: #ff8da1;
   text-shadow: 0 1px 0 #ff274d;
 }
+.impress-box.pink.rounded {
+  border-radius: 8px;
+}
+.impress-box.pink.tall {
+  height: 200px;
+}
 .impress-box.pink.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -1265,12 +1406,12 @@
 .impress-box.pink.wide .caption {
   width: 198px;
 }
-.impress-box.pink:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.pink:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.yellow {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.yellow {
   background: #ffff00;
@@ -1298,8 +1439,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.yellow:hover {
-  background: #e5e600;
+.impress-box.yellow *,
+.impress-box.yellow:hover * {
+  text-decoration: none;
 }
 .impress-box.yellow .caption {
   display: block;
@@ -1336,11 +1478,16 @@
 .impress-box.yellow:hover .caption {
   color: #ffffff;
 }
-.impress-box.yellow.rounded {
-  border-radius: 8px;
+.impress-box.yellow:hover {
+  background: #e5e600;
+  text-decoration: none;
 }
-.impress-box.yellow.tall {
-  height: 200px;
+.impress-box.yellow:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.yellow:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.yellow .landmark {
   display: block;
@@ -1364,6 +1511,12 @@
   color: #cccc00;
   text-shadow: 0 1px 0 #666600;
 }
+.impress-box.yellow.rounded {
+  border-radius: 8px;
+}
+.impress-box.yellow.tall {
+  height: 200px;
+}
 .impress-box.yellow.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -1380,12 +1533,12 @@
 .impress-box.yellow.wide .caption {
   width: 198px;
 }
-.impress-box.yellow:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.yellow:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.purple {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.purple {
   background: #a98cf3;
@@ -1413,8 +1566,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.purple:hover {
-  background: #9875f1;
+.impress-box.purple *,
+.impress-box.purple:hover * {
+  text-decoration: none;
 }
 .impress-box.purple .caption {
   display: block;
@@ -1451,11 +1605,16 @@
 .impress-box.purple:hover .caption {
   color: #ffffff;
 }
-.impress-box.purple.rounded {
-  border-radius: 8px;
+.impress-box.purple:hover {
+  background: #9875f1;
+  text-decoration: none;
 }
-.impress-box.purple.tall {
-  height: 200px;
+.impress-box.purple:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.purple:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.purple .landmark {
   display: block;
@@ -1479,6 +1638,12 @@
   color: #865eee;
   text-shadow: 0 1px 0 #4a16d0;
 }
+.impress-box.purple.rounded {
+  border-radius: 8px;
+}
+.impress-box.purple.tall {
+  height: 200px;
+}
 .impress-box.purple.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -1495,12 +1660,12 @@
 .impress-box.purple.wide .caption {
   width: 198px;
 }
-.impress-box.purple:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.purple:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.dark.purple {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.dark.purple {
   background: #564f8a;
@@ -1528,8 +1693,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.dark.purple:hover {
-  background: #4c467a;
+.impress-box.dark.purple *,
+.impress-box.dark.purple:hover * {
+  text-decoration: none;
 }
 .impress-box.dark.purple .caption {
   display: block;
@@ -1566,11 +1732,16 @@
 .impress-box.dark.purple:hover .caption {
   color: #ffffff;
 }
-.impress-box.dark.purple.rounded {
-  border-radius: 8px;
+.impress-box.dark.purple:hover {
+  background: #4c467a;
+  text-decoration: none;
 }
-.impress-box.dark.purple.tall {
-  height: 200px;
+.impress-box.dark.purple:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.dark.purple:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.dark.purple .landmark {
   display: block;
@@ -1594,6 +1765,12 @@
   color: #423c6a;
   text-shadow: 0 1px 0 #191729;
 }
+.impress-box.dark.purple.rounded {
+  border-radius: 8px;
+}
+.impress-box.dark.purple.tall {
+  height: 200px;
+}
 .impress-box.dark.purple.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -1610,12 +1787,12 @@
 .impress-box.dark.purple.wide .caption {
   width: 198px;
 }
-.impress-box.dark.purple:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.dark.purple:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.blue {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.blue {
   background: #7daff3;
@@ -1643,8 +1820,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.blue:hover {
-  background: #66a1f1;
+.impress-box.blue *,
+.impress-box.blue:hover * {
+  text-decoration: none;
 }
 .impress-box.blue .caption {
   display: block;
@@ -1681,11 +1859,16 @@
 .impress-box.blue:hover .caption {
   color: #ffffff;
 }
-.impress-box.blue.rounded {
-  border-radius: 8px;
+.impress-box.blue:hover {
+  background: #66a1f1;
+  text-decoration: none;
 }
-.impress-box.blue.tall {
-  height: 200px;
+.impress-box.blue:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.blue:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.blue .landmark {
   display: block;
@@ -1709,6 +1892,12 @@
   color: #4e92ef;
   text-shadow: 0 1px 0 #125ec5;
 }
+.impress-box.blue.rounded {
+  border-radius: 8px;
+}
+.impress-box.blue.tall {
+  height: 200px;
+}
 .impress-box.blue.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -1725,12 +1914,12 @@
 .impress-box.blue.wide .caption {
   width: 198px;
 }
-.impress-box.blue:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.blue:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.cyan {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.cyan {
   background: #98f1f3;
@@ -1758,8 +1947,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.cyan:hover {
-  background: #81eef0;
+.impress-box.cyan *,
+.impress-box.cyan:hover * {
+  text-decoration: none;
 }
 .impress-box.cyan .caption {
   display: block;
@@ -1796,11 +1986,16 @@
 .impress-box.cyan:hover .caption {
   color: #ffffff;
 }
-.impress-box.cyan.rounded {
-  border-radius: 8px;
+.impress-box.cyan:hover {
+  background: #81eef0;
+  text-decoration: none;
 }
-.impress-box.cyan.tall {
-  height: 200px;
+.impress-box.cyan:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.cyan:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.cyan .landmark {
   display: block;
@@ -1824,6 +2019,12 @@
   color: #6aebee;
   text-shadow: 0 1px 0 #19d5d9;
 }
+.impress-box.cyan.rounded {
+  border-radius: 8px;
+}
+.impress-box.cyan.tall {
+  height: 200px;
+}
 .impress-box.cyan.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -1840,12 +2041,12 @@
 .impress-box.cyan.wide .caption {
   width: 198px;
 }
-.impress-box.cyan:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.cyan:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.teal {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.teal {
   background: #00b5ad;
@@ -1873,8 +2074,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.teal:hover {
-  background: #009c95;
+.impress-box.teal *,
+.impress-box.teal:hover * {
+  text-decoration: none;
 }
 .impress-box.teal .caption {
   display: block;
@@ -1911,11 +2113,16 @@
 .impress-box.teal:hover .caption {
   color: #ffffff;
 }
-.impress-box.teal.rounded {
-  border-radius: 8px;
+.impress-box.teal:hover {
+  background: #009c95;
+  text-decoration: none;
 }
-.impress-box.teal.tall {
-  height: 200px;
+.impress-box.teal:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.teal:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.teal .landmark {
   display: block;
@@ -1939,6 +2146,12 @@
   color: #00827c;
   text-shadow: 0 1px 0 #001c1b;
 }
+.impress-box.teal.rounded {
+  border-radius: 8px;
+}
+.impress-box.teal.tall {
+  height: 200px;
+}
 .impress-box.teal.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -1955,12 +2168,12 @@
 .impress-box.teal.wide .caption {
   width: 198px;
 }
-.impress-box.teal:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.teal:hover .caption {
-  opacity: 1;
-  color: #ffffff;
+.impress-box.red {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
 }
 .impress-box.red {
   background: #d95c5c;
@@ -1988,8 +2201,9 @@
   text-decoration: none;
   margin: 2px;
 }
-.impress-box.red:hover {
-  background: #d44747;
+.impress-box.red *,
+.impress-box.red:hover * {
+  text-decoration: none;
 }
 .impress-box.red .caption {
   display: block;
@@ -2026,11 +2240,16 @@
 .impress-box.red:hover .caption {
   color: #ffffff;
 }
-.impress-box.red.rounded {
-  border-radius: 8px;
+.impress-box.red:hover {
+  background: #d44747;
+  text-decoration: none;
 }
-.impress-box.red.tall {
-  height: 200px;
+.impress-box.red:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.red:hover .caption {
+  opacity: 1;
+  color: #ffffff;
 }
 .impress-box.red .landmark {
   display: block;
@@ -2054,6 +2273,12 @@
   color: #cf3333;
   text-shadow: 0 1px 0 #7f1d1d;
 }
+.impress-box.red.rounded {
+  border-radius: 8px;
+}
+.impress-box.red.tall {
+  height: 200px;
+}
 .impress-box.red.tall .text.landmark {
   font-size: 30px;
   line-height: 40px;
@@ -2069,11 +2294,4 @@
 }
 .impress-box.red.wide .caption {
   width: 198px;
-}
-.impress-box.red:hover .landmark {
-  opacity: 0.1;
-}
-.impress-box.red:hover .caption {
-  opacity: 1;
-  color: #ffffff;
 }

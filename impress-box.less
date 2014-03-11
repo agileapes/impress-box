@@ -1,11 +1,9 @@
-/** Essentials **/
+/** ImpressBox v1.0 **/
+/** Copyright AgileApes, Ltd. 2014 (c) **/
 
-.impress-box *, .impress-box:hover *, .impress-box, .impress-box:hover {
-  text-decoration: none;
-}
-
-/** ImpressBox **/
-
+/**
+  Transition helper mixin
+**/
 .transition (@property, @duration, @style: ease-in-out) {
   -webkit-transition-property: @property;
   -webkit-transition-duration: @duration;
@@ -28,7 +26,14 @@
   transition-timing-function: @style;
 }
 
+/**
+  The main mixin defining an ImpressBox
+*/
 .box-definition(@color) {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
   & {
     background: @color;
     display: inline-block;
@@ -40,9 +45,10 @@
     border: 1px solid darken(@color, 10%);
     text-decoration: none;
     margin: 2px;
+
   }
-  &:hover {
-    background: darken(@color, 5%);
+  *, &:hover * {
+    text-decoration: none;
   }
   .caption {
     display: block;
@@ -62,15 +68,23 @@
     background: darken(@color, 10%);
     color: saturate(darken(@color, 40%), 20%);
   }
+  //Here we handle hover changes
   &:hover .caption {
     color: #ffffff;
   }
-  &.rounded {
-    border-radius: 8px;
+  &:hover {
+    background: darken(@color, 5%);
+    text-decoration: none;
   }
-  &.tall {
-    height: 200px;
+  //this changes the appearance of the box's internal bits when hovered
+  &:hover .landmark {
+    opacity: 0.1;
   }
+  &:hover .caption {
+    opacity: 1;
+    color: #ffffff;
+  }
+  //the landmarks are defined here
   & .landmark {
     display: block;
     width: 100%;
@@ -92,6 +106,14 @@
     color: darken(@color, 10%);
     text-shadow: 0 1px 0 darken(@color, 30%);
   }
+  //border roundness could be added
+  &.rounded {
+    border-radius: 8px;
+  }
+  //the box could optionally be defined as tall
+  &.tall {
+    height: 200px;
+  }
   &.tall .text.landmark {
     font-size: 30px;
     line-height: 40px;
@@ -102,20 +124,16 @@
     line-height: 50px;
     padding-top: 60px;
   }
+  //we could make the box wider
   &.wide {
     width: 200px;
   }
   &.wide .caption {
     width: 198px;
   }
-  &:hover .landmark {
-    opacity: 0.1;
-  }
-  &:hover .caption {
-    opacity: 1;
-    color: #ffffff;
-  }
 }
+
+/** The default appearance **/
 
 .impress-box {
   .box-definition(#eeeeee)
@@ -138,6 +156,8 @@
 .impress-box.success {
   .box-definition(#dff0d8)
 }
+
+/** Color Variations **/
 
 .impress-box.muddy.green {
   .box-definition(#A1CF64);
