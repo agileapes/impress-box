@@ -1,8 +1,9 @@
-/** ImpressBox v1.0 **/
+/** ImpressBox v1.1 **/
 /** Copyright AgileApes, Ltd. 2014 (c) **/
 /**
   Transition helper mixin
 **/
+/** This bit here changes the color of the landmark based on the lightness of the color of the whole box **/
 /**
   The main mixin defining an ImpressBox
 */
@@ -21,24 +22,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #d5d5d5;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box *,
 .impress-box:hover * {
@@ -95,6 +97,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box .text.landmark {
   font-size: 30px;
@@ -134,6 +151,68 @@
 .impress-box.wide .caption {
   width: 198px;
 }
+.impress-box.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.zooming .text.landmark,
+.impress-box.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.zooming.in:hover .text.landmark,
+.impress-box.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.zooming.out:hover .text.landmark,
+.impress-box.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.zooming.in:hover .text.landmark,
+.impress-box.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.wide.zooming.out:hover .text.landmark,
+.impress-box.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 /** Contextual Variations **/
 .impress-box.info {
   /**
@@ -149,24 +228,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #afd9ee;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.info *,
 .impress-box.info:hover * {
@@ -223,6 +303,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.info .text.landmark {
   font-size: 30px;
@@ -262,6 +357,68 @@
 .impress-box.info.wide .caption {
   width: 198px;
 }
+.impress-box.info.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.info.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.info.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.info.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.info.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.info.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.info.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.info.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.info.zooming .text.landmark,
+.impress-box.info.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.info.zooming.in:hover .text.landmark,
+.impress-box.info.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.info.zooming.out:hover .text.landmark,
+.impress-box.info.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.info.zooming.in:hover .text.landmark,
+.impress-box.info.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.info.wide.zooming.out:hover .text.landmark,
+.impress-box.info.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.danger {
   /**
     THE STRUCTURE
@@ -276,24 +433,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #e4b9b9;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.danger *,
 .impress-box.danger:hover * {
@@ -350,6 +508,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.danger .text.landmark {
   font-size: 30px;
@@ -389,6 +562,68 @@
 .impress-box.danger.wide .caption {
   width: 198px;
 }
+.impress-box.danger.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.danger.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.danger.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.danger.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.danger.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.danger.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.danger.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.danger.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.danger.zooming .text.landmark,
+.impress-box.danger.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.danger.zooming.in:hover .text.landmark,
+.impress-box.danger.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.danger.zooming.out:hover .text.landmark,
+.impress-box.danger.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.danger.zooming.in:hover .text.landmark,
+.impress-box.danger.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.danger.wide.zooming.out:hover .text.landmark,
+.impress-box.danger.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.warning {
   /**
     THE STRUCTURE
@@ -403,24 +638,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #f7ecb5;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.warning *,
 .impress-box.warning:hover * {
@@ -477,6 +713,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.warning .text.landmark {
   font-size: 30px;
@@ -516,6 +767,68 @@
 .impress-box.warning.wide .caption {
   width: 198px;
 }
+.impress-box.warning.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.warning.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.warning.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.warning.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.warning.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.warning.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.warning.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.warning.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.warning.zooming .text.landmark,
+.impress-box.warning.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.warning.zooming.in:hover .text.landmark,
+.impress-box.warning.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.warning.zooming.out:hover .text.landmark,
+.impress-box.warning.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.warning.zooming.in:hover .text.landmark,
+.impress-box.warning.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.warning.wide.zooming.out:hover .text.landmark,
+.impress-box.warning.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.success {
   /**
     THE STRUCTURE
@@ -530,24 +843,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #c1e2b3;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.success *,
 .impress-box.success:hover * {
@@ -604,6 +918,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.success .text.landmark {
   font-size: 30px;
@@ -643,6 +972,68 @@
 .impress-box.success.wide .caption {
   width: 198px;
 }
+.impress-box.success.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.success.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.success.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.success.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.success.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.success.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.success.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.success.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.success.zooming .text.landmark,
+.impress-box.success.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.success.zooming.in:hover .text.landmark,
+.impress-box.success.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.success.zooming.out:hover .text.landmark,
+.impress-box.success.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.success.zooming.in:hover .text.landmark,
+.impress-box.success.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.success.wide.zooming.out:hover .text.landmark,
+.impress-box.success.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 /** Color Variations **/
 .impress-box.muddy.green {
   /**
@@ -658,24 +1049,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #89c33d;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.muddy.green *,
 .impress-box.muddy.green:hover * {
@@ -732,6 +1124,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.muddy.green .text.landmark {
   font-size: 30px;
@@ -771,6 +1178,68 @@
 .impress-box.muddy.green.wide .caption {
   width: 198px;
 }
+.impress-box.muddy.green.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.muddy.green.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.muddy.green.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.muddy.green.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.muddy.green.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.muddy.green.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.muddy.green.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.muddy.green.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.muddy.green.zooming .text.landmark,
+.impress-box.muddy.green.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.muddy.green.zooming.in:hover .text.landmark,
+.impress-box.muddy.green.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.muddy.green.zooming.out:hover .text.landmark,
+.impress-box.muddy.green.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.muddy.green.zooming.in:hover .text.landmark,
+.impress-box.muddy.green.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.muddy.green.wide.zooming.out:hover .text.landmark,
+.impress-box.muddy.green.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.green {
   /**
     THE STRUCTURE
@@ -785,24 +1254,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #4c8b36;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.green *,
 .impress-box.green:hover * {
@@ -859,6 +1329,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.green .text.landmark {
   font-size: 30px;
@@ -898,6 +1383,68 @@
 .impress-box.green.wide .caption {
   width: 198px;
 }
+.impress-box.green.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.green.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.green.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.green.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.green.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.green.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.green.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.green.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.green.zooming .text.landmark,
+.impress-box.green.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.green.zooming.in:hover .text.landmark,
+.impress-box.green.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.green.zooming.out:hover .text.landmark,
+.impress-box.green.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.green.zooming.in:hover .text.landmark,
+.impress-box.green.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.green.wide.zooming.out:hover .text.landmark,
+.impress-box.green.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.lime {
   /**
     THE STRUCTURE
@@ -906,30 +1453,31 @@
 
 }
 .impress-box.lime {
-  background: #6cff8f;
+  background: #afff51;
   display: inline-block;
   width: 150px;
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
-  border: 1px solid #39ff68;
+  border: 1px solid #98ff1e;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.lime *,
 .impress-box.lime:hover * {
@@ -964,14 +1512,14 @@
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   text-decoration: none;
-  background: #39ff68;
-  color: #009f26;
+  background: #98ff1e;
+  color: #478400;
 }
 .impress-box.lime:hover .caption {
   color: #ffffff;
 }
 .impress-box.lime:hover {
-  background: #53ff7c;
+  background: #a3ff37;
   text-decoration: none;
 }
 .impress-box.lime:hover .landmark {
@@ -986,6 +1534,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.lime .text.landmark {
   font-size: 30px;
@@ -1000,8 +1563,8 @@
 .impress-box.lime .text.landmark,
 .impress-box.lime .glyph.landmark {
   font-family: "Helvetica", serif;
-  color: #39ff68;
-  text-shadow: 0 1px 0 #00d232;
+  color: #98ff1e;
+  text-shadow: 0 1px 0 #63b700;
 }
 .impress-box.lime.rounded {
   border-radius: 8px;
@@ -1025,6 +1588,68 @@
 .impress-box.lime.wide .caption {
   width: 198px;
 }
+.impress-box.lime.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.lime.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.lime.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.lime.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.lime.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.lime.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.lime.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.lime.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.lime.zooming .text.landmark,
+.impress-box.lime.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.lime.zooming.in:hover .text.landmark,
+.impress-box.lime.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.lime.zooming.out:hover .text.landmark,
+.impress-box.lime.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.lime.zooming.in:hover .text.landmark,
+.impress-box.lime.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.lime.wide.zooming.out:hover .text.landmark,
+.impress-box.lime.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.orange {
   /**
     THE STRUCTURE
@@ -1039,24 +1664,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #cc8400;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.orange *,
 .impress-box.orange:hover * {
@@ -1113,6 +1739,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.orange .text.landmark {
   font-size: 30px;
@@ -1152,6 +1793,68 @@
 .impress-box.orange.wide .caption {
   width: 198px;
 }
+.impress-box.orange.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.orange.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.orange.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.orange.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.orange.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.orange.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.orange.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.orange.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.orange.zooming .text.landmark,
+.impress-box.orange.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.orange.zooming.in:hover .text.landmark,
+.impress-box.orange.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.orange.zooming.out:hover .text.landmark,
+.impress-box.orange.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.orange.zooming.in:hover .text.landmark,
+.impress-box.orange.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.orange.wide.zooming.out:hover .text.landmark,
+.impress-box.orange.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.violet {
   /**
     THE STRUCTURE
@@ -1166,24 +1869,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #e855e8;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.violet *,
 .impress-box.violet:hover * {
@@ -1240,6 +1944,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.violet .text.landmark {
   font-size: 30px;
@@ -1279,6 +1998,68 @@
 .impress-box.violet.wide .caption {
   width: 198px;
 }
+.impress-box.violet.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.violet.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.violet.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.violet.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.violet.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.violet.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.violet.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.violet.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.violet.zooming .text.landmark,
+.impress-box.violet.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.violet.zooming.in:hover .text.landmark,
+.impress-box.violet.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.violet.zooming.out:hover .text.landmark,
+.impress-box.violet.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.violet.zooming.in:hover .text.landmark,
+.impress-box.violet.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.violet.wide.zooming.out:hover .text.landmark,
+.impress-box.violet.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.pink {
   /**
     THE STRUCTURE
@@ -1293,24 +2074,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #ff8da1;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.pink *,
 .impress-box.pink:hover * {
@@ -1367,6 +2149,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.pink .text.landmark {
   font-size: 30px;
@@ -1406,6 +2203,68 @@
 .impress-box.pink.wide .caption {
   width: 198px;
 }
+.impress-box.pink.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.pink.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.pink.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.pink.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.pink.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.pink.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.pink.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.pink.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.pink.zooming .text.landmark,
+.impress-box.pink.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.pink.zooming.in:hover .text.landmark,
+.impress-box.pink.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.pink.zooming.out:hover .text.landmark,
+.impress-box.pink.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.pink.zooming.in:hover .text.landmark,
+.impress-box.pink.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.pink.wide.zooming.out:hover .text.landmark,
+.impress-box.pink.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.yellow {
   /**
     THE STRUCTURE
@@ -1420,24 +2279,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #cccc00;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.yellow *,
 .impress-box.yellow:hover * {
@@ -1494,6 +2354,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.yellow .text.landmark {
   font-size: 30px;
@@ -1533,6 +2408,68 @@
 .impress-box.yellow.wide .caption {
   width: 198px;
 }
+.impress-box.yellow.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.yellow.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.yellow.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.yellow.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.yellow.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.yellow.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.yellow.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.yellow.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.yellow.zooming .text.landmark,
+.impress-box.yellow.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.yellow.zooming.in:hover .text.landmark,
+.impress-box.yellow.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.yellow.zooming.out:hover .text.landmark,
+.impress-box.yellow.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.yellow.zooming.in:hover .text.landmark,
+.impress-box.yellow.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.yellow.wide.zooming.out:hover .text.landmark,
+.impress-box.yellow.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.purple {
   /**
     THE STRUCTURE
@@ -1547,24 +2484,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #865eee;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.purple *,
 .impress-box.purple:hover * {
@@ -1621,6 +2559,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.purple .text.landmark {
   font-size: 30px;
@@ -1660,6 +2613,68 @@
 .impress-box.purple.wide .caption {
   width: 198px;
 }
+.impress-box.purple.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.purple.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.purple.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.purple.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.purple.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.purple.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.purple.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.purple.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.purple.zooming .text.landmark,
+.impress-box.purple.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.purple.zooming.in:hover .text.landmark,
+.impress-box.purple.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.purple.zooming.out:hover .text.landmark,
+.impress-box.purple.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.purple.zooming.in:hover .text.landmark,
+.impress-box.purple.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.purple.wide.zooming.out:hover .text.landmark,
+.impress-box.purple.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.dark.purple {
   /**
     THE STRUCTURE
@@ -1674,24 +2689,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #423c6a;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.dark.purple *,
 .impress-box.dark.purple:hover * {
@@ -1748,6 +2764,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.dark.purple .text.landmark {
   font-size: 30px;
@@ -1787,6 +2818,68 @@
 .impress-box.dark.purple.wide .caption {
   width: 198px;
 }
+.impress-box.dark.purple.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.dark.purple.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.dark.purple.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.dark.purple.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.dark.purple.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.dark.purple.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.dark.purple.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.dark.purple.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.dark.purple.zooming .text.landmark,
+.impress-box.dark.purple.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.dark.purple.zooming.in:hover .text.landmark,
+.impress-box.dark.purple.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.dark.purple.zooming.out:hover .text.landmark,
+.impress-box.dark.purple.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.dark.purple.zooming.in:hover .text.landmark,
+.impress-box.dark.purple.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.dark.purple.wide.zooming.out:hover .text.landmark,
+.impress-box.dark.purple.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.blue {
   /**
     THE STRUCTURE
@@ -1801,24 +2894,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #4e92ef;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.blue *,
 .impress-box.blue:hover * {
@@ -1875,6 +2969,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.blue .text.landmark {
   font-size: 30px;
@@ -1914,6 +3023,68 @@
 .impress-box.blue.wide .caption {
   width: 198px;
 }
+.impress-box.blue.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.blue.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.blue.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.blue.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.blue.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.blue.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.blue.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.blue.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.blue.zooming .text.landmark,
+.impress-box.blue.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.blue.zooming.in:hover .text.landmark,
+.impress-box.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.blue.zooming.out:hover .text.landmark,
+.impress-box.blue.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.blue.zooming.in:hover .text.landmark,
+.impress-box.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.blue.wide.zooming.out:hover .text.landmark,
+.impress-box.blue.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.cyan {
   /**
     THE STRUCTURE
@@ -1928,24 +3099,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #6aebee;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.cyan *,
 .impress-box.cyan:hover * {
@@ -2002,6 +3174,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.cyan .text.landmark {
   font-size: 30px;
@@ -2041,6 +3228,68 @@
 .impress-box.cyan.wide .caption {
   width: 198px;
 }
+.impress-box.cyan.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.cyan.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.cyan.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.cyan.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.cyan.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.cyan.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.cyan.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.cyan.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.cyan.zooming .text.landmark,
+.impress-box.cyan.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.cyan.zooming.in:hover .text.landmark,
+.impress-box.cyan.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.cyan.zooming.out:hover .text.landmark,
+.impress-box.cyan.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.cyan.zooming.in:hover .text.landmark,
+.impress-box.cyan.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.cyan.wide.zooming.out:hover .text.landmark,
+.impress-box.cyan.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.teal {
   /**
     THE STRUCTURE
@@ -2055,24 +3304,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #00827c;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.teal *,
 .impress-box.teal:hover * {
@@ -2129,6 +3379,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.teal .text.landmark {
   font-size: 30px;
@@ -2168,6 +3433,68 @@
 .impress-box.teal.wide .caption {
   width: 198px;
 }
+.impress-box.teal.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.teal.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.teal.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.teal.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.teal.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.teal.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.teal.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.teal.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.teal.zooming .text.landmark,
+.impress-box.teal.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.teal.zooming.in:hover .text.landmark,
+.impress-box.teal.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.teal.zooming.out:hover .text.landmark,
+.impress-box.teal.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.teal.zooming.in:hover .text.landmark,
+.impress-box.teal.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.teal.wide.zooming.out:hover .text.landmark,
+.impress-box.teal.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
 .impress-box.red {
   /**
     THE STRUCTURE
@@ -2182,24 +3509,25 @@
   height: 150px;
   padding: 5px;
   text-align: center;
-  -webkit-transition-property: "backgroud";
+  -webkit-transition-property: "all";
   -webkit-transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in-out;
-  -moz-transition-property: "backgroud";
+  -moz-transition-property: "all";
   -moz-transition-duration: 0.4s;
   -moz-transition-timing-function: ease-in-out;
-  -ms-transition-property: "backgroud";
+  -ms-transition-property: "all";
   -ms-transition-duration: 0.4s;
   -ms-transition-timing-function: ease-in-out;
-  -o-transition-property: "backgroud";
+  -o-transition-property: "all";
   -o-transition-duration: 0.4s;
   -o-transition-timing-function: ease-in-out;
-  transition-property: "backgroud";
+  transition-property: "all";
   transition-duration: 0.4s;
   transition-timing-function: ease-in-out;
   border: 1px solid #cf3333;
   text-decoration: none;
   margin: 2px;
+  overflow: hidden;
 }
 .impress-box.red *,
 .impress-box.red:hover * {
@@ -2256,6 +3584,21 @@
   width: 100%;
   height: 100%;
   opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
 }
 .impress-box.red .text.landmark {
   font-size: 30px;
@@ -2294,4 +3637,3961 @@
 }
 .impress-box.red.wide .caption {
   width: 198px;
+}
+.impress-box.red.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.red.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.red.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.red.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.red.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.red.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.red.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.red.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.red.zooming .text.landmark,
+.impress-box.red.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.red.zooming.in:hover .text.landmark,
+.impress-box.red.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.red.zooming.out:hover .text.landmark,
+.impress-box.red.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.red.zooming.in:hover .text.landmark,
+.impress-box.red.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.red.wide.zooming.out:hover .text.landmark,
+.impress-box.red.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.dark.blue {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.dark.blue {
+  background: #255485;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #1a3b5d;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.dark.blue *,
+.impress-box.dark.blue:hover * {
+  text-decoration: none;
+}
+.impress-box.dark.blue .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #1a3b5d;
+  color: #000000;
+}
+.impress-box.dark.blue:hover .caption {
+  color: #ffffff;
+}
+.impress-box.dark.blue:hover {
+  background: #1f4771;
+  text-decoration: none;
+}
+.impress-box.dark.blue:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.dark.blue:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.dark.blue .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.dark.blue .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.dark.blue .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.dark.blue .text.landmark,
+.impress-box.dark.blue .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #1a3b5d;
+  text-shadow: 0 1px 0 #04080d;
+}
+.impress-box.dark.blue.rounded {
+  border-radius: 8px;
+}
+.impress-box.dark.blue.tall {
+  height: 200px;
+}
+.impress-box.dark.blue.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.dark.blue.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.dark.blue.wide {
+  width: 200px;
+}
+.impress-box.dark.blue.wide .caption {
+  width: 198px;
+}
+.impress-box.dark.blue.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.dark.blue.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.dark.blue.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.dark.blue.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.dark.blue.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.dark.blue.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.dark.blue.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.dark.blue.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.dark.blue.zooming .text.landmark,
+.impress-box.dark.blue.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.dark.blue.zooming.in:hover .text.landmark,
+.impress-box.dark.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.dark.blue.zooming.out:hover .text.landmark,
+.impress-box.dark.blue.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.dark.blue.zooming.in:hover .text.landmark,
+.impress-box.dark.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.dark.blue.wide.zooming.out:hover .text.landmark,
+.impress-box.dark.blue.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.dark.red {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.dark.red {
+  background: #852b3a;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #5e1f29;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.dark.red *,
+.impress-box.dark.red:hover * {
+  text-decoration: none;
+}
+.impress-box.dark.red .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #5e1f29;
+  color: #000000;
+}
+.impress-box.dark.red:hover .caption {
+  color: #ffffff;
+}
+.impress-box.dark.red:hover {
+  background: #722532;
+  text-decoration: none;
+}
+.impress-box.dark.red:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.dark.red:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.dark.red .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.dark.red .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.dark.red .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.dark.red .text.landmark,
+.impress-box.dark.red .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #5e1f29;
+  text-shadow: 0 1px 0 #110608;
+}
+.impress-box.dark.red.rounded {
+  border-radius: 8px;
+}
+.impress-box.dark.red.tall {
+  height: 200px;
+}
+.impress-box.dark.red.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.dark.red.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.dark.red.wide {
+  width: 200px;
+}
+.impress-box.dark.red.wide .caption {
+  width: 198px;
+}
+.impress-box.dark.red.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.dark.red.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.dark.red.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.dark.red.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.dark.red.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.dark.red.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.dark.red.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.dark.red.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.dark.red.zooming .text.landmark,
+.impress-box.dark.red.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.dark.red.zooming.in:hover .text.landmark,
+.impress-box.dark.red.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.dark.red.zooming.out:hover .text.landmark,
+.impress-box.dark.red.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.dark.red.zooming.in:hover .text.landmark,
+.impress-box.dark.red.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.dark.red.wide.zooming.out:hover .text.landmark,
+.impress-box.dark.red.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.brown {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.brown {
+  background: #855b53;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #66463f;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.brown *,
+.impress-box.brown:hover * {
+  text-decoration: none;
+}
+.impress-box.brown .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #66463f;
+  color: #090403;
+}
+.impress-box.brown:hover .caption {
+  color: #ffffff;
+}
+.impress-box.brown:hover {
+  background: #755049;
+  text-decoration: none;
+}
+.impress-box.brown:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.brown:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.brown .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.brown .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.brown .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.brown .text.landmark,
+.impress-box.brown .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #66463f;
+  text-shadow: 0 1px 0 #271b18;
+}
+.impress-box.brown.rounded {
+  border-radius: 8px;
+}
+.impress-box.brown.tall {
+  height: 200px;
+}
+.impress-box.brown.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.brown.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.brown.wide {
+  width: 200px;
+}
+.impress-box.brown.wide .caption {
+  width: 198px;
+}
+.impress-box.brown.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.brown.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.brown.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.brown.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.brown.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.brown.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.brown.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.brown.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.brown.zooming .text.landmark,
+.impress-box.brown.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.brown.zooming.in:hover .text.landmark,
+.impress-box.brown.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.brown.zooming.out:hover .text.landmark,
+.impress-box.brown.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.brown.zooming.in:hover .text.landmark,
+.impress-box.brown.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.brown.wide.zooming.out:hover .text.landmark,
+.impress-box.brown.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.dark.orange {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.dark.orange {
+  background: #ba6400;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #874900;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.dark.orange *,
+.impress-box.dark.orange:hover * {
+  text-decoration: none;
+}
+.impress-box.dark.orange .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #874900;
+  color: #000000;
+}
+.impress-box.dark.orange:hover .caption {
+  color: #ffffff;
+}
+.impress-box.dark.orange:hover {
+  background: #a15600;
+  text-decoration: none;
+}
+.impress-box.dark.orange:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.dark.orange:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.dark.orange .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.dark.orange .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.dark.orange .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.dark.orange .text.landmark,
+.impress-box.dark.orange .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #874900;
+  text-shadow: 0 1px 0 #211200;
+}
+.impress-box.dark.orange.rounded {
+  border-radius: 8px;
+}
+.impress-box.dark.orange.tall {
+  height: 200px;
+}
+.impress-box.dark.orange.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.dark.orange.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.dark.orange.wide {
+  width: 200px;
+}
+.impress-box.dark.orange.wide .caption {
+  width: 198px;
+}
+.impress-box.dark.orange.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.dark.orange.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.dark.orange.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.dark.orange.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.dark.orange.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.dark.orange.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.dark.orange.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.dark.orange.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.dark.orange.zooming .text.landmark,
+.impress-box.dark.orange.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.dark.orange.zooming.in:hover .text.landmark,
+.impress-box.dark.orange.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.dark.orange.zooming.out:hover .text.landmark,
+.impress-box.dark.orange.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.dark.orange.zooming.in:hover .text.landmark,
+.impress-box.dark.orange.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.dark.orange.wide.zooming.out:hover .text.landmark,
+.impress-box.dark.orange.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.oceanic.blue {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.oceanic.blue {
+  background: #8ab5ba;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #6aa1a7;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.oceanic.blue *,
+.impress-box.oceanic.blue:hover * {
+  text-decoration: none;
+}
+.impress-box.oceanic.blue .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #6aa1a7;
+  color: #215257;
+}
+.impress-box.oceanic.blue:hover .caption {
+  color: #ffffff;
+}
+.impress-box.oceanic.blue:hover {
+  background: #7aabb1;
+  text-decoration: none;
+}
+.impress-box.oceanic.blue:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.oceanic.blue:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.oceanic.blue .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.oceanic.blue .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.oceanic.blue .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.oceanic.blue .text.landmark,
+.impress-box.oceanic.blue .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #6aa1a7;
+  text-shadow: 0 1px 0 #3f676c;
+}
+.impress-box.oceanic.blue.rounded {
+  border-radius: 8px;
+}
+.impress-box.oceanic.blue.tall {
+  height: 200px;
+}
+.impress-box.oceanic.blue.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.oceanic.blue.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.oceanic.blue.wide {
+  width: 200px;
+}
+.impress-box.oceanic.blue.wide .caption {
+  width: 198px;
+}
+.impress-box.oceanic.blue.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.oceanic.blue.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.oceanic.blue.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.oceanic.blue.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.oceanic.blue.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.oceanic.blue.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.oceanic.blue.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.oceanic.blue.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.oceanic.blue.zooming .text.landmark,
+.impress-box.oceanic.blue.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.oceanic.blue.zooming.in:hover .text.landmark,
+.impress-box.oceanic.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.oceanic.blue.zooming.out:hover .text.landmark,
+.impress-box.oceanic.blue.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.oceanic.blue.zooming.in:hover .text.landmark,
+.impress-box.oceanic.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.oceanic.blue.wide.zooming.out:hover .text.landmark,
+.impress-box.oceanic.blue.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.oceanic.green {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.oceanic.green {
+  background: #8dbaa4;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #6da78b;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.oceanic.green *,
+.impress-box.oceanic.green:hover * {
+  text-decoration: none;
+}
+.impress-box.oceanic.green .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #6da78b;
+  color: #22593e;
+}
+.impress-box.oceanic.green:hover .caption {
+  color: #ffffff;
+}
+.impress-box.oceanic.green:hover {
+  background: #7db097;
+  text-decoration: none;
+}
+.impress-box.oceanic.green:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.oceanic.green:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.oceanic.green .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.oceanic.green .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.oceanic.green .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.oceanic.green .text.landmark,
+.impress-box.oceanic.green .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #6da78b;
+  text-shadow: 0 1px 0 #426c57;
+}
+.impress-box.oceanic.green.rounded {
+  border-radius: 8px;
+}
+.impress-box.oceanic.green.tall {
+  height: 200px;
+}
+.impress-box.oceanic.green.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.oceanic.green.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.oceanic.green.wide {
+  width: 200px;
+}
+.impress-box.oceanic.green.wide .caption {
+  width: 198px;
+}
+.impress-box.oceanic.green.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.oceanic.green.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.oceanic.green.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.oceanic.green.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.oceanic.green.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.oceanic.green.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.oceanic.green.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.oceanic.green.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.oceanic.green.zooming .text.landmark,
+.impress-box.oceanic.green.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.oceanic.green.zooming.in:hover .text.landmark,
+.impress-box.oceanic.green.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.oceanic.green.zooming.out:hover .text.landmark,
+.impress-box.oceanic.green.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.oceanic.green.zooming.in:hover .text.landmark,
+.impress-box.oceanic.green.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.oceanic.green.wide.zooming.out:hover .text.landmark,
+.impress-box.oceanic.green.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.royal.blue {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.royal.blue {
+  background: #87ccdf;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #5fbbd4;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.royal.blue *,
+.impress-box.royal.blue:hover * {
+  text-decoration: none;
+}
+.impress-box.royal.blue .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #5fbbd4;
+  color: #116f89;
+}
+.impress-box.royal.blue:hover .caption {
+  color: #ffffff;
+}
+.impress-box.royal.blue:hover {
+  background: #73c3da;
+  text-decoration: none;
+}
+.impress-box.royal.blue:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.royal.blue:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.royal.blue .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.royal.blue .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.royal.blue .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.royal.blue .text.landmark,
+.impress-box.royal.blue .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #5fbbd4;
+  text-shadow: 0 1px 0 #2b88a2;
+}
+.impress-box.royal.blue.rounded {
+  border-radius: 8px;
+}
+.impress-box.royal.blue.tall {
+  height: 200px;
+}
+.impress-box.royal.blue.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.royal.blue.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.royal.blue.wide {
+  width: 200px;
+}
+.impress-box.royal.blue.wide .caption {
+  width: 198px;
+}
+.impress-box.royal.blue.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.royal.blue.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.royal.blue.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.royal.blue.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.royal.blue.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.royal.blue.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.royal.blue.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.royal.blue.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.royal.blue.zooming .text.landmark,
+.impress-box.royal.blue.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.royal.blue.zooming.in:hover .text.landmark,
+.impress-box.royal.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.royal.blue.zooming.out:hover .text.landmark,
+.impress-box.royal.blue.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.royal.blue.zooming.in:hover .text.landmark,
+.impress-box.royal.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.royal.blue.wide.zooming.out:hover .text.landmark,
+.impress-box.royal.blue.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.beige {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.beige {
+  background: #f5f5dc;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #eaeab4;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.beige *,
+.impress-box.beige:hover * {
+  text-decoration: none;
+}
+.impress-box.beige .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #eaeab4;
+  color: #e1e124;
+}
+.impress-box.beige:hover .caption {
+  color: #ffffff;
+}
+.impress-box.beige:hover {
+  background: #efefc8;
+  text-decoration: none;
+}
+.impress-box.beige:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.beige:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.beige .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.beige .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.beige .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.beige .text.landmark,
+.impress-box.beige .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #eaeab4;
+  text-shadow: 0 1px 0 #d3d365;
+}
+.impress-box.beige.rounded {
+  border-radius: 8px;
+}
+.impress-box.beige.tall {
+  height: 200px;
+}
+.impress-box.beige.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.beige.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.beige.wide {
+  width: 200px;
+}
+.impress-box.beige.wide .caption {
+  width: 198px;
+}
+.impress-box.beige.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.beige.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.beige.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.beige.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.beige.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.beige.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.beige.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.beige.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.beige.zooming .text.landmark,
+.impress-box.beige.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.beige.zooming.in:hover .text.landmark,
+.impress-box.beige.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.beige.zooming.out:hover .text.landmark,
+.impress-box.beige.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.beige.zooming.in:hover .text.landmark,
+.impress-box.beige.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.beige.wide.zooming.out:hover .text.landmark,
+.impress-box.beige.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.silver {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.silver {
+  background: #c0c0c0;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #a7a7a7;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.silver *,
+.impress-box.silver:hover * {
+  text-decoration: none;
+}
+.impress-box.silver .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #a7a7a7;
+  color: #6c4848;
+}
+.impress-box.silver:hover .caption {
+  color: #ffffff;
+}
+.impress-box.silver:hover {
+  background: #b3b3b3;
+  text-decoration: none;
+}
+.impress-box.silver:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.silver:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.silver .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.silver .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.silver .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.silver .text.landmark,
+.impress-box.silver .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #a7a7a7;
+  text-shadow: 0 1px 0 #747474;
+}
+.impress-box.silver.rounded {
+  border-radius: 8px;
+}
+.impress-box.silver.tall {
+  height: 200px;
+}
+.impress-box.silver.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.silver.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.silver.wide {
+  width: 200px;
+}
+.impress-box.silver.wide .caption {
+  width: 198px;
+}
+.impress-box.silver.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.silver.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.silver.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.silver.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.silver.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.silver.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.silver.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.silver.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.silver.zooming .text.landmark,
+.impress-box.silver.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.silver.zooming.in:hover .text.landmark,
+.impress-box.silver.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.silver.zooming.out:hover .text.landmark,
+.impress-box.silver.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.silver.zooming.in:hover .text.landmark,
+.impress-box.silver.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.silver.wide.zooming.out:hover .text.landmark,
+.impress-box.silver.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.gold {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.gold {
+  background: #ffd700;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #ccac00;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.gold *,
+.impress-box.gold:hover * {
+  text-decoration: none;
+}
+.impress-box.gold .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #ccac00;
+  color: #332b00;
+}
+.impress-box.gold:hover .caption {
+  color: #ffffff;
+}
+.impress-box.gold:hover {
+  background: #e6c200;
+  text-decoration: none;
+}
+.impress-box.gold:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.gold:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.gold .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.gold .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.gold .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.gold .text.landmark,
+.impress-box.gold .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #ccac00;
+  text-shadow: 0 1px 0 #665600;
+}
+.impress-box.gold.rounded {
+  border-radius: 8px;
+}
+.impress-box.gold.tall {
+  height: 200px;
+}
+.impress-box.gold.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.gold.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.gold.wide {
+  width: 200px;
+}
+.impress-box.gold.wide .caption {
+  width: 198px;
+}
+.impress-box.gold.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.gold.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.gold.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.gold.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.gold.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.gold.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.gold.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.gold.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.gold.zooming .text.landmark,
+.impress-box.gold.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.gold.zooming.in:hover .text.landmark,
+.impress-box.gold.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.gold.zooming.out:hover .text.landmark,
+.impress-box.gold.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.gold.zooming.in:hover .text.landmark,
+.impress-box.gold.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.gold.wide.zooming.out:hover .text.landmark,
+.impress-box.gold.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.sky.blue {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.sky.blue {
+  background: #6dd8ff;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #3acaff;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.sky.blue *,
+.impress-box.sky.blue:hover * {
+  text-decoration: none;
+}
+.impress-box.sky.blue .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #3acaff;
+  color: #0075a0;
+}
+.impress-box.sky.blue:hover .caption {
+  color: #ffffff;
+}
+.impress-box.sky.blue:hover {
+  background: #54d1ff;
+  text-decoration: none;
+}
+.impress-box.sky.blue:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.sky.blue:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.sky.blue .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.sky.blue .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.sky.blue .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.sky.blue .text.landmark,
+.impress-box.sky.blue .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #3acaff;
+  text-shadow: 0 1px 0 #009bd3;
+}
+.impress-box.sky.blue.rounded {
+  border-radius: 8px;
+}
+.impress-box.sky.blue.tall {
+  height: 200px;
+}
+.impress-box.sky.blue.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.sky.blue.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.sky.blue.wide {
+  width: 200px;
+}
+.impress-box.sky.blue.wide .caption {
+  width: 198px;
+}
+.impress-box.sky.blue.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.sky.blue.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.sky.blue.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.sky.blue.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.sky.blue.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.sky.blue.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.sky.blue.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.sky.blue.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.sky.blue.zooming .text.landmark,
+.impress-box.sky.blue.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.sky.blue.zooming.in:hover .text.landmark,
+.impress-box.sky.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.sky.blue.zooming.out:hover .text.landmark,
+.impress-box.sky.blue.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.sky.blue.zooming.in:hover .text.landmark,
+.impress-box.sky.blue.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.sky.blue.wide.zooming.out:hover .text.landmark,
+.impress-box.sky.blue.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.light.green {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.light.green {
+  background: #6cff8f;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #39ff68;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.light.green *,
+.impress-box.light.green:hover * {
+  text-decoration: none;
+}
+.impress-box.light.green .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #39ff68;
+  color: #009f26;
+}
+.impress-box.light.green:hover .caption {
+  color: #ffffff;
+}
+.impress-box.light.green:hover {
+  background: #53ff7c;
+  text-decoration: none;
+}
+.impress-box.light.green:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.light.green:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.light.green .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.light.green .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.light.green .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.light.green .text.landmark,
+.impress-box.light.green .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #39ff68;
+  text-shadow: 0 1px 0 #00d232;
+}
+.impress-box.light.green.rounded {
+  border-radius: 8px;
+}
+.impress-box.light.green.tall {
+  height: 200px;
+}
+.impress-box.light.green.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.light.green.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.light.green.wide {
+  width: 200px;
+}
+.impress-box.light.green.wide .caption {
+  width: 198px;
+}
+.impress-box.light.green.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.light.green.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.light.green.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.light.green.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.light.green.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.light.green.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.light.green.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.light.green.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.light.green.zooming .text.landmark,
+.impress-box.light.green.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.light.green.zooming.in:hover .text.landmark,
+.impress-box.light.green.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.light.green.zooming.out:hover .text.landmark,
+.impress-box.light.green.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.light.green.zooming.in:hover .text.landmark,
+.impress-box.light.green.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.light.green.wide.zooming.out:hover .text.landmark,
+.impress-box.light.green.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.lavender {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.lavender {
+  background: #e6e6fa;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #bcbcf2;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.lavender *,
+.impress-box.lavender:hover * {
+  text-decoration: none;
+}
+.impress-box.lavender .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #bcbcf2;
+  color: #2525ef;
+}
+.impress-box.lavender:hover .caption {
+  color: #ffffff;
+}
+.impress-box.lavender:hover {
+  background: #d1d1f6;
+  text-decoration: none;
+}
+.impress-box.lavender:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.lavender:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.lavender .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.lavender .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.lavender .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.lavender .text.landmark,
+.impress-box.lavender .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #bcbcf2;
+  text-shadow: 0 1px 0 #6767e0;
+}
+.impress-box.lavender.rounded {
+  border-radius: 8px;
+}
+.impress-box.lavender.tall {
+  height: 200px;
+}
+.impress-box.lavender.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.lavender.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.lavender.wide {
+  width: 200px;
+}
+.impress-box.lavender.wide .caption {
+  width: 198px;
+}
+.impress-box.lavender.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.lavender.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.lavender.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.lavender.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.lavender.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.lavender.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.lavender.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.lavender.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.lavender.zooming .text.landmark,
+.impress-box.lavender.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.lavender.zooming.in:hover .text.landmark,
+.impress-box.lavender.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.lavender.zooming.out:hover .text.landmark,
+.impress-box.lavender.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.lavender.zooming.in:hover .text.landmark,
+.impress-box.lavender.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.lavender.wide.zooming.out:hover .text.landmark,
+.impress-box.lavender.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.turquoise {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.turquoise {
+  background: #40e0d0;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #21ccbb;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.turquoise *,
+.impress-box.turquoise:hover * {
+  text-decoration: none;
+}
+.impress-box.turquoise .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #21ccbb;
+  color: #035149;
+}
+.impress-box.turquoise:hover .caption {
+  color: #ffffff;
+}
+.impress-box.turquoise:hover {
+  background: #2adccb;
+  text-decoration: none;
+}
+.impress-box.turquoise:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.turquoise:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.turquoise .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.turquoise .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.turquoise .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.turquoise .text.landmark,
+.impress-box.turquoise .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #21ccbb;
+  text-shadow: 0 1px 0 #13746a;
+}
+.impress-box.turquoise.rounded {
+  border-radius: 8px;
+}
+.impress-box.turquoise.tall {
+  height: 200px;
+}
+.impress-box.turquoise.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.turquoise.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.turquoise.wide {
+  width: 200px;
+}
+.impress-box.turquoise.wide .caption {
+  width: 198px;
+}
+.impress-box.turquoise.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.turquoise.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.turquoise.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.turquoise.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.turquoise.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.turquoise.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.turquoise.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.turquoise.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.turquoise.zooming .text.landmark,
+.impress-box.turquoise.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.turquoise.zooming.in:hover .text.landmark,
+.impress-box.turquoise.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.turquoise.zooming.out:hover .text.landmark,
+.impress-box.turquoise.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.turquoise.zooming.in:hover .text.landmark,
+.impress-box.turquoise.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.turquoise.wide.zooming.out:hover .text.landmark,
+.impress-box.turquoise.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.wheat {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.wheat {
+  background: #f5deb3;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #efca86;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.wheat *,
+.impress-box.wheat:hover * {
+  text-decoration: none;
+}
+.impress-box.wheat .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #efca86;
+  color: #d88e04;
+}
+.impress-box.wheat:hover .caption {
+  color: #ffffff;
+}
+.impress-box.wheat:hover {
+  background: #f2d49c;
+  text-decoration: none;
+}
+.impress-box.wheat:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.wheat:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.wheat .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.wheat .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.wheat .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.wheat .text.landmark,
+.impress-box.wheat .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #efca86;
+  text-shadow: 0 1px 0 #e3a32c;
+}
+.impress-box.wheat.rounded {
+  border-radius: 8px;
+}
+.impress-box.wheat.tall {
+  height: 200px;
+}
+.impress-box.wheat.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.wheat.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.wheat.wide {
+  width: 200px;
+}
+.impress-box.wheat.wide .caption {
+  width: 198px;
+}
+.impress-box.wheat.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.wheat.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.wheat.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.wheat.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.wheat.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.wheat.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.wheat.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.wheat.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.wheat.zooming .text.landmark,
+.impress-box.wheat.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.wheat.zooming.in:hover .text.landmark,
+.impress-box.wheat.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.wheat.zooming.out:hover .text.landmark,
+.impress-box.wheat.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.wheat.zooming.in:hover .text.landmark,
+.impress-box.wheat.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.wheat.wide.zooming.out:hover .text.landmark,
+.impress-box.wheat.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.wheat {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.wheat {
+  background: #f5deb3;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #efca86;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.wheat *,
+.impress-box.wheat:hover * {
+  text-decoration: none;
+}
+.impress-box.wheat .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #efca86;
+  color: #d88e04;
+}
+.impress-box.wheat:hover .caption {
+  color: #ffffff;
+}
+.impress-box.wheat:hover {
+  background: #f2d49c;
+  text-decoration: none;
+}
+.impress-box.wheat:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.wheat:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.wheat .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.wheat .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.wheat .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.wheat .text.landmark,
+.impress-box.wheat .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #efca86;
+  text-shadow: 0 1px 0 #e3a32c;
+}
+.impress-box.wheat.rounded {
+  border-radius: 8px;
+}
+.impress-box.wheat.tall {
+  height: 200px;
+}
+.impress-box.wheat.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.wheat.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.wheat.wide {
+  width: 200px;
+}
+.impress-box.wheat.wide .caption {
+  width: 198px;
+}
+.impress-box.wheat.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.wheat.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.wheat.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.wheat.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.wheat.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.wheat.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.wheat.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.wheat.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.wheat.zooming .text.landmark,
+.impress-box.wheat.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.wheat.zooming.in:hover .text.landmark,
+.impress-box.wheat.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.wheat.zooming.out:hover .text.landmark,
+.impress-box.wheat.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.wheat.zooming.in:hover .text.landmark,
+.impress-box.wheat.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.wheat.wide.zooming.out:hover .text.landmark,
+.impress-box.wheat.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.snowy {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.snowy {
+  background: #fffafa;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #ffc7c7;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.snowy *,
+.impress-box.snowy:hover * {
+  text-decoration: none;
+}
+.impress-box.snowy .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #ffc7c7;
+  color: #ff2e2e;
+}
+.impress-box.snowy:hover .caption {
+  color: #ffffff;
+}
+.impress-box.snowy:hover {
+  background: #ffe1e1;
+  text-decoration: none;
+}
+.impress-box.snowy:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.snowy:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.snowy .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.snowy .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.snowy .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.snowy .text.landmark,
+.impress-box.snowy .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #ffc7c7;
+  text-shadow: 0 1px 0 #ff6161;
+}
+.impress-box.snowy.rounded {
+  border-radius: 8px;
+}
+.impress-box.snowy.tall {
+  height: 200px;
+}
+.impress-box.snowy.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.snowy.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.snowy.wide {
+  width: 200px;
+}
+.impress-box.snowy.wide .caption {
+  width: 198px;
+}
+.impress-box.snowy.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.snowy.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.snowy.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.snowy.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.snowy.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.snowy.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.snowy.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.snowy.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.snowy.zooming .text.landmark,
+.impress-box.snowy.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.snowy.zooming.in:hover .text.landmark,
+.impress-box.snowy.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.snowy.zooming.out:hover .text.landmark,
+.impress-box.snowy.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.snowy.zooming.in:hover .text.landmark,
+.impress-box.snowy.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.snowy.wide.zooming.out:hover .text.landmark,
+.impress-box.snowy.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.white {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.white {
+  background: #ffffff;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #e6e6e6;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.white *,
+.impress-box.white:hover * {
+  text-decoration: none;
+}
+.impress-box.white .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #e6e6e6;
+  color: #ad8585;
+}
+.impress-box.white:hover .caption {
+  color: #ffffff;
+}
+.impress-box.white:hover {
+  background: #f2f2f2;
+  text-decoration: none;
+}
+.impress-box.white:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.white:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.white .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.white .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.white .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.white .text.landmark,
+.impress-box.white .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #e6e6e6;
+  text-shadow: 0 1px 0 #b3b3b3;
+}
+.impress-box.white.rounded {
+  border-radius: 8px;
+}
+.impress-box.white.tall {
+  height: 200px;
+}
+.impress-box.white.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.white.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.white.wide {
+  width: 200px;
+}
+.impress-box.white.wide .caption {
+  width: 198px;
+}
+.impress-box.white.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.white.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.white.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.white.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.white.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.white.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.white.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.white.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.white.zooming .text.landmark,
+.impress-box.white.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.white.zooming.in:hover .text.landmark,
+.impress-box.white.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.white.zooming.out:hover .text.landmark,
+.impress-box.white.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.white.zooming.in:hover .text.landmark,
+.impress-box.white.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.white.wide.zooming.out:hover .text.landmark,
+.impress-box.white.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
+}
+.impress-box.black {
+  /**
+    THE STRUCTURE
+    here the structure of an ImpressBox is defined
+  **/
+
+}
+.impress-box.black {
+  background: #000000;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  border: 1px solid #000000;
+  text-decoration: none;
+  margin: 2px;
+  overflow: hidden;
+}
+.impress-box.black *,
+.impress-box.black:hover * {
+  text-decoration: none;
+}
+.impress-box.black .caption {
+  display: block;
+  opacity: 0.1;
+  width: 148px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  line-height: 20px;
+  font-size: 20px;
+  top: -30px;
+  left: -5px;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+  text-decoration: none;
+  background: #000000;
+  color: #000000;
+}
+.impress-box.black:hover .caption {
+  color: #ffffff;
+}
+.impress-box.black:hover {
+  background: #000000;
+  text-decoration: none;
+}
+.impress-box.black:hover .landmark {
+  opacity: 0.1;
+}
+.impress-box.black:hover .caption {
+  opacity: 1;
+  color: #ffffff;
+}
+.impress-box.black .landmark {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition-property: "all";
+  -webkit-transition-duration: 0.4s;
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-property: "all";
+  -moz-transition-duration: 0.4s;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-property: "all";
+  -ms-transition-duration: 0.4s;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-property: "all";
+  -o-transition-duration: 0.4s;
+  -o-transition-timing-function: ease-in-out;
+  transition-property: "all";
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+.impress-box.black .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 40px;
+}
+.impress-box.black .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 30px;
+}
+.impress-box.black .text.landmark,
+.impress-box.black .glyph.landmark {
+  font-family: "Helvetica", serif;
+  color: #ffffff;
+  text-shadow: 0 1px 0 #000000;
+}
+.impress-box.black.rounded {
+  border-radius: 8px;
+}
+.impress-box.black.tall {
+  height: 200px;
+}
+.impress-box.black.tall .text.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  padding-top: 70px;
+}
+.impress-box.black.tall .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  padding-top: 60px;
+}
+.impress-box.black.wide {
+  width: 200px;
+}
+.impress-box.black.wide .caption {
+  width: 198px;
+}
+.impress-box.black.wide.tall .text.landmark {
+  font-size: 40px;
+}
+.impress-box.black.wide.tall .glyph.landmark {
+  font-size: 60px;
+}
+.impress-box.black.sliding .landmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  visibility: visible;
+  opacity: 1;
+}
+.impress-box.black.sliding:hover .landmark {
+  visibility: hidden;
+  opacity: 0;
+}
+.impress-box.black.sliding.down:hover .landmark {
+  top: 50px;
+}
+.impress-box.black.sliding.up:hover .landmark {
+  top: -50px;
+}
+.impress-box.black.sliding.left:hover .landmark {
+  left: -50px;
+}
+.impress-box.black.sliding.right:hover .landmark {
+  left: 50px;
+}
+.impress-box.black.zooming .text.landmark,
+.impress-box.black.zooming .glyph.landmark {
+  font-size: 30px;
+  line-height: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.impress-box.black.zooming.in:hover .text.landmark,
+.impress-box.black.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -75px;
+  width: 300px;
+}
+.impress-box.black.zooming.out:hover .text.landmark,
+.impress-box.black.zooming.out:hover .glyph.landmark {
+  font-size: 20px;
+  line-height: 20px;
+  left: 25px;
+  width: 100px;
+}
+.impress-box.black.zooming.in:hover .text.landmark,
+.impress-box.black.zooming.in:hover .glyph.landmark {
+  font-size: 50px;
+  line-height: 50px;
+  left: -50px;
+  width: 300px;
+}
+.impress-box.black.wide.zooming.out:hover .text.landmark,
+.impress-box.black.wide.zooming.out:hover .glyph.landmark {
+  left: 50px;
 }

@@ -1,4 +1,4 @@
-/** ImpressBox v1.0 **/
+/** ImpressBox v1.1 **/
 /** Copyright AgileApes, Ltd. 2014 (c) **/
 
 /**
@@ -26,6 +26,24 @@
   transition-timing-function: @style;
 }
 
+/** This bit here changes the color of the landmark based on the lightness of the color of the whole box **/
+.landmark-color(@color) when (lightness(@color) > 30%) {
+  color: darken(@color, 10%);
+  text-shadow: 0 1px 0 darken(@color, 30%);
+}
+
+.landmark-color(@color) when (lightness(@color) < 30%) {
+  color: #ffffff;
+  text-shadow: 0 1px 0 darken(@color, 30%);
+}
+
+.transition-properties(...) {
+  -webkit-transition-property: @arguments;
+  -moz-transition-property: @arguments;
+  -o-transition-property: @arguments;
+  transition-property: @arguments;
+}
+
 /**
   The main mixin defining an ImpressBox
 */
@@ -41,11 +59,11 @@
     height: 150px;
     padding: 5px;
     text-align: center;
-    .transition("backgroud", 0.4s);
+    .transition("all", 0.4s);
     border: 1px solid darken(@color, 10%);
     text-decoration: none;
     margin: 2px;
-
+    overflow: hidden;
   }
   *, &:hover * {
     text-decoration: none;
@@ -90,6 +108,7 @@
     width: 100%;
     height: 100%;
     opacity: 1;
+    .transition("all", 0.4s);
   }
   .text.landmark {
     font-size: 30px;
@@ -103,8 +122,7 @@
   }
   .text.landmark, .glyph.landmark {
     font-family: "Helvetica",serif;
-    color: darken(@color, 10%);
-    text-shadow: 0 1px 0 darken(@color, 30%);
+    .landmark-color(@color);
   }
   //border roundness could be added
   &.rounded {
@@ -130,6 +148,65 @@
   }
   &.wide .caption {
     width: 198px;
+  }
+  &.wide.tall .text.landmark {
+    font-size: 40px;
+  }
+  &.wide.tall .glyph.landmark {
+    font-size: 60px;
+  }
+  //sliding animation
+  &.sliding .landmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+  &.sliding:hover .landmark {
+    visibility: hidden;
+    opacity: 0;
+  }
+  &.sliding.down:hover .landmark {
+    top: 50px;
+  }
+  &.sliding.up:hover .landmark {
+    top: -50px;
+  }
+  &.sliding.left:hover .landmark {
+    left: -50px;
+  }
+  &.sliding.right:hover .landmark {
+    left: 50px;
+  }
+  //zoom animation
+  &.zooming .text.landmark, &.zooming .glyph.landmark {
+    font-size: 30px;
+    line-height: 40px;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  &.zooming.in:hover .text.landmark, &.zooming.in:hover .glyph.landmark {
+    font-size: 50px;
+    line-height: 50px;
+    left: -75px;
+    width: 300px;
+  }
+  &.zooming.out:hover .text.landmark, &.zooming.out:hover .glyph.landmark {
+    font-size: 20px;
+    line-height: 20px;
+    left: 25px;
+    width: 100px;
+  }
+  &.zooming.in:hover .text.landmark, &.zooming.in:hover .glyph.landmark {
+    font-size: 50px;
+    line-height: 50px;
+    left: -50px;
+    width: 300px;
+  }
+  &.wide.zooming.out:hover .text.landmark, &.wide.zooming.out:hover .glyph.landmark {
+    left: 50px;
   }
 }
 
@@ -168,7 +245,7 @@
 }
 
 .impress-box.lime {
-  .box-definition(#6cff8f);
+  .box-definition(#afff51);
 }
 
 .impress-box.orange {
@@ -209,4 +286,80 @@
 
 .impress-box.red {
   .box-definition(#d95c5c);
+}
+
+.impress-box.dark.blue {
+  .box-definition(#255485);
+}
+
+.impress-box.dark.red {
+  .box-definition(#852b3a);
+}
+
+.impress-box.brown {
+  .box-definition(#855b53);
+}
+
+.impress-box.dark.orange {
+  .box-definition(#ba6400);
+}
+
+.impress-box.oceanic.blue {
+  .box-definition(#8ab5ba);
+}
+
+.impress-box.oceanic.green {
+  .box-definition(#8dbaa4);
+}
+
+.impress-box.royal.blue {
+  .box-definition(#87ccdf);
+}
+
+.impress-box.beige {
+  .box-definition(#f5f5dc);
+}
+
+.impress-box.silver {
+  .box-definition(#c0c0c0);
+}
+
+.impress-box.gold {
+  .box-definition(#ffd700);
+}
+
+.impress-box.sky.blue {
+  .box-definition(#6dd8ff);
+}
+
+.impress-box.light.green {
+  .box-definition(#6cff8f);
+}
+
+.impress-box.lavender {
+  .box-definition(#e6e6fa);
+}
+
+.impress-box.turquoise {
+  .box-definition(#40e0d0);
+}
+
+.impress-box.wheat {
+  .box-definition(#f5deb3);
+}
+
+.impress-box.wheat {
+  .box-definition(#f5deb3);
+}
+
+.impress-box.snowy {
+  .box-definition(#fffafa);
+}
+
+.impress-box.white {
+  .box-definition(#ffffff);
+}
+
+.impress-box.black {
+  .box-definition(#000000);
 }
